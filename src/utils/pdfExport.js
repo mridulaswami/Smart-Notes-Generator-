@@ -72,7 +72,7 @@ export function exportToPDF(notes) {
 
     notes.keyPoints.forEach((point) => {
       checkPage(8);
-      const lines = doc.splitTextToSize(`• ${point}`, contentW - 4);
+      const lines = doc.splitTextToSize(`- ${point}`, contentW - 4);
       doc.text(lines, margin + 2, y);
       y += lines.length * 5.5 + 2;
     });
@@ -110,7 +110,7 @@ export function exportToPDF(notes) {
           doc.setFont('helvetica', 'normal');
           doc.setFontSize(9.5);
           doc.setTextColor(60, 60, 80);
-          const lines = doc.splitTextToSize(`◦ ${bullet}`, contentW - 6);
+          const lines = doc.splitTextToSize(`  > ${bullet}`, contentW - 6);
           doc.text(lines, margin + 4, y);
           y += lines.length * 5 + 2;
         });
@@ -132,7 +132,7 @@ export function exportToPDF(notes) {
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(10);
       doc.setTextColor(50, 50, 70);
-      const lines = doc.splitTextToSize(`☐ ${item}`, contentW - 4);
+      const lines = doc.splitTextToSize(`[ ] ${item}`, contentW - 4);
       doc.text(lines, margin + 2, y);
       y += lines.length * 5.5 + 2;
     });
@@ -157,7 +157,7 @@ export function exportToPDF(notes) {
     doc.setTextColor(180, 180, 200);
     doc.setFont('helvetica', 'normal');
     doc.text(
-      `Page ${i} of ${totalPages}  •  Smart Notes Generator`,
+      `Page ${i} of ${totalPages}  |  Smart Notes Generator`,
       pageW / 2,
       doc.internal.pageSize.getHeight() - 10,
       { align: 'center' }
