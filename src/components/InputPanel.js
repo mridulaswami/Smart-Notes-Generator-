@@ -25,7 +25,6 @@ function InputPanel({ apiKey, onNotesGenerated, isGenerating, setIsGenerating, o
     startRecording,
     stopRecording,
     clearTranscript,
-    setTranscript,
   } = useSpeechRecognition();
 
   const activeText = inputMode === 'audio' ? transcript : text;
